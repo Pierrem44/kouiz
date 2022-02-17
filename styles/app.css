@@ -1,0 +1,27 @@
+body{
+    background-color: FEC471;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.box {
+    border:solid;
+    
+}
+
+.neon {
+    text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+.neon-light {
+    text-shadow: 0 0 3px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+.neon-very-light {
+    text-shadow: 0 0 1px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
