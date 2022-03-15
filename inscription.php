@@ -1,6 +1,4 @@
 <?php include 'header.php' ?>
-<?php require_once 'SQL/bdd.php'?> 
-<?php require_once 'SQL/accountAccess.php'?>
 <html>
     <body>
         <div class="center">

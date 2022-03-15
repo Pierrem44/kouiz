@@ -1,6 +1,6 @@
 <?php include 'header.php' ?>
-<?php require_once 'SQL/bdd.php'?>
-<?php require_once 'SQL/questionAccess.php'?>
+<?php require_once 'Controller/bdd.php'?>
+<?php require_once 'Controller/questionAccess.php'?>
 <?php redirect_if_not_admin();?>
 <html>
     <body>

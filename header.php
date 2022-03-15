@@ -1,10 +1,10 @@
-<?php include_once 'tools/session.php'?>
-<?php include_once 'tools/cssLoader.php' ?>
-<?php require_once 'tools/jsUtilities.php'?>
-<?php require_once 'tools/phpUtilities.php'?>
-<?php require_once 'objects/objectLoader.php'?>
-<?php require_once 'SQL/bdd.php'?>
-<?php require_once 'SQL/accountAccess.php'?>
+<?php include_once 'Tools/session.php'?>
+<?php include_once 'Tools/cssLoader.php' ?>
+<?php require_once 'Tools/jsUtilities.php'?>
+<?php require_once 'Tools/phpUtilities.php'?>
+<?php require_once 'Objects/objectLoader.php'?>
+<?php require_once 'Controller/bdd.php'?>
+<?php require_once 'Controller/accountAccess.php'?>
 
 <script type="text/javascript" src="scripts/jquery/jquery.js"></script>
 <head>
@@ -22,23 +22,23 @@ if (isset($_SESSION['player'])) {
 }
 
 if(isset($_POST['connexion'])) {
-    $login = $_POST['login'];
-    $mail = $_POST['mail'];
+  $login = $_POST['login'];
+  $mail = $_POST['mail'];
 
-    if (!empty($login) && !empty($mail)) {
-        $conn = connectionSQL();
+  if (!empty($login) && !empty($mail)) {
+    $conn = connectionSQL();
 
-        if (connect($conn, $login, $mail)) {
-          header('Location: index.php');
-        } else {
-          modal('mainModal','Connexion',"Mauvais pseudo ou mail !");
-        }
-
+    if (connect($conn, $login, $mail)) {
+      header('Location: index.php');
+    } else {
+      modal('mainModal','Connexion',"Mauvais pseudo ou mail !");
     }
-    else
-    {
-        modal('mainModal','Connexion',"Erreur connexion : Un champ vide !");
-    }
+
+  }
+  else
+  {
+      modal('mainModal','Connexion',"Erreur connexion : Un champ vide !");
+  }
 }
 if(isset($_GET['disconnect'])) {
   disconnect();

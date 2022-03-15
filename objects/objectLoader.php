@@ -1,2 +1,2 @@
-<?php require_once 'objects/Player.php' ?>
-<?php require_once 'objects/Question.php' ?>
+<?php require_once 'Objects/Player.php' ?>
+<?php require_once 'Objects/Question.php' ?>
