@@ -1,22 +1,30 @@
 <?php
+
 function getQuestions($conn, int $quizzCode) {
-    if ($quizzCode == 1){
+
+    // For the flag quizz
+    if ($quizzCode == 1) {
 
         $response = file_get_contents('https://restcountries.com/v3.1/all');
-        //echo (json_encode($response));
 
-        //$response = json_decode($response);
         $jsonArray = json_decode($response, true);
-        //$response = json_decode($response);
-        //foreach ($response as $row)
-        //echo gettype($response);
-        foreach ($jsonArray as $row){
+
+        foreach ($jsonArray as $row) {
             $name = $row["translations"]["fra"]["official"];
             $flag = $row["flags"]["png"];
-            echo $name;
-            echo "<img src='". $flag ."'>";
+            insertQuestion($quizzCode, $flag, $name);
         }
         return true;
     }
+}
+
+function insertQuestion(int $quizzCode, string $question, string $response ) {
+
+    $conn = connectionSQL();
+
+    $sql = "INSERT INTO Question (QuizzId, value, response) VALUES ('$quizzCode', '$question', '$response')";
+    $results = $conn->query($sql);
+    return true;
+
 }
 ?>

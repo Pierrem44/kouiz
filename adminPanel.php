@@ -6,7 +6,7 @@
     <body>
         <div class='p-2'>
             <form action="adminPanel.php" method="post">
-                <input type="submit" name="Quizz1" value="GO" />
+                <input type="submit" name="Quizz1" value="Importer les questions du quizz drapeaux" />
             </form>
         </div>
     </body>
